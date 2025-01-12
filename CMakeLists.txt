@@ -5,5 +5,8 @@ find_package(Enzyme REQUIRED)
 add_library(mylib mylib.c)
 target_link_libraries(mylib LLDEnzymeFlags)
 
-add_executable(enzyme_test main.c)
-target_link_libraries(enzyme_test LLDEnzymeFlags mylib)
+add_executable(lld_enzyme_test main_lld.c)
+target_link_libraries(lld_enzyme_test LLDEnzymeFlags mylib)
+
+add_executable(clang_enzyme_test main_clang.c)
+target_link_libraries(clang_enzyme_test ClangEnzymeFlags)
